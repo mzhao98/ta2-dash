@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>Search-and-Rescue Experiment</title>
+
+		<style type="text/css">
+			/* these styles need to be defined locally */
+			body {
+			    padding:0px;
+			    margin: 0px;
+			    background-color: white;
+			    color: black;
+			    font-weight: 300;
+			    font-size: 13pt;
+			}
+
+			/* ad.html  - the ad that people view first */
+			#adlogo {
+			    width: 140px;
+			    padding: 2px;
+			    border: 1px solid #ccc;
+			    margin-right: 1em;
+			}
+
+            #container-not-an-ad { /* obtuse name because pesky ad-blocker extensions */
+				background: white;
+			    margin: 30px;
+			}
+
+			h1 {
+				margin-top: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container-not-an-ad" class="media">
+			<div class="media-body">
+
+					<h1>Individual Player Analytics</h1>
+
+                    <button type="button" class="btn btn-primary btn-lg" onClick="redirect_P1();"> Player 1 </button>
+                    <button type="button" class="btn btn-primary btn-lg" onClick="redirect_P1();"> Player 1 </button>
+
+
+
+					<script type="text/javascript">
+						var url_string = window.location.href
+						var url = new URL(url_string);
+						var round_number = url.searchParams.get("round");
+
+						var condition_number = url.searchParams.get("condition");
+
+						function redirect_P1() {
+
+						   	window.location.href = '/';
+
+
+						}
+					</script>
+
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,8 @@
+#view4 {
+    height: 950px;
+    /* background-color: green; */
+    background: url('https://raw.githubusercontent.com/mzhao98/data_store/main/saturn_mirror.png') no-repeat;
+    background-size: 1070px 870px;
+    background-position: -25px 33px ;
+    opacity: 1;
+}
