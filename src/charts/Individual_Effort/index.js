@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import draw from './vis';
 
-export default class BarChart extends Component {
+export default class LineChart extends Component {
 
     componentDidMount() {
         draw(this.props);
@@ -13,7 +13,7 @@ export default class BarChart extends Component {
 
     render() {
         return (
-            <div className='vis-barchart'/>
+            <div className='ind_effort'/>
         )
     }
 }

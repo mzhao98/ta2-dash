@@ -3,7 +3,11 @@
 
 
 
+
+
+
 import * as d3 from 'd3';
+const rand_add = [1,5,10,15,20];
 
 //const draw = (props) => {
 //    d3.select('.vis-scatterplot > *').remove();
@@ -26,7 +30,7 @@ const draw = (props) => {
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 30, bottom: 30, left: 60},
         width = 950 - margin.left - margin.right,
-        height = 200 - margin.top - margin.bottom;
+        height = 280 - margin.top - margin.bottom;
 
 
     // append the svg object to the body of the page
@@ -39,7 +43,7 @@ const draw = (props) => {
               "translate(" + margin.left + "," + margin.top + ")")
 
     //Read the data
-    d3.csv("https://raw.githubusercontent.com/mzhao98/data_store/main/xy_traj_cer.csv", function(data) {
+    d3.csv("cer_test2.csv", function(data) {
 
       // Add X axis
       var x = d3.scaleLinear()
@@ -59,7 +63,7 @@ const draw = (props) => {
 
       // Add Y axis
       var y = d3.scaleLinear()
-        .domain([0, 0.005])
+        .domain([0, 0.003])
         .range([height, 0]);
       svg.append("g")
        .attr("class", "myYaxis")
@@ -83,19 +87,24 @@ const draw = (props) => {
         .attr("transform", "rotate(-90)")
         .text("Redundancy");
 
-      // Add the line
+//       Add the line
 //      svg.append("path")
 //          .datum(data)
 //          .attr("fill", "none")
-//          .attr("stroke", "#69b3a2")
+//          .attr("stroke", "#000000")
 //          .attr("stroke-width", 1.5)
 //          .attr("d", d3.line()
 //            .x(function(d) { return x(d.ID) })
-//            .y(function(d) { return y(d.coverage) })
+//            .y(function(d) { return y(d.ideal_coverage) })
 //            )
 //            .attr("opacity", "1")
 
-
+//     svg.append("text")
+//        .attr("class", "path")
+//        .attr("text-anchor", "end")
+//        .attr("x", width+10)
+//        .attr("y", 50)
+//        .text("optimal team");
 
 //       var line = d3.svg.line()
 //        .interpolate("linear")
@@ -110,29 +119,21 @@ const draw = (props) => {
         .enter()
         .append("circle")
           .attr("cx", function (d) { return x(d.ID); } )
-          .attr("cy", function (d) { return y(d.redundancy); } )
+          .attr("cy", function (d) { return y(d.team_redundancy); } )
           .attr("r", 2.5)
           .style("fill", "#CC5B2E")
           .attr("opacity", "0")
           .call(transition);
 
-//        svg.selectAll("path")
-//          .transition()
-//          .duration(500)
-//          .attr("opacity", "1")
-//          .call(transition);
-//          .delay(function(d, i) { return i * 500; })
-//          .attr("d", d3.line()
-//            .x(function(d) { return x(d.ID) })
-//            .y(function(d) { return y(d.coverage) })
-//            )
+        svg.selectAll("path")
+          .attr("opacity", "1")
+
 
 
 
       svg.selectAll("circle")
         .transition()
-        .delay(function(d,i){return(i*100)})
-        .duration(2000)
+        .delay(function(d,i){return(i*10)})
         .attr("opacity", "1")
 
     })

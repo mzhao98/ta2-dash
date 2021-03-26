@@ -4,18 +4,19 @@ import './view3.css';
 
 export default class View7 extends Component {
     render() {
-        const {data} = this.props;
+        const width = 260;
+        const height = 260;
         return (
             <div id='view1' className='pane'>
                 <div className='header'>Participant Skills Profile C (PINK)</div>
                 <div>
                     <div className={'info-view'}>
-                        <div>Physical Search Walking Skill: 0.3958</div>
-                        <div>Physical Search Obstacle Skill: 0.5938</div>
-                        <div>Cognitive Search Pathing Decision: 4.3948</div>
-                        <div>Cognitive Search Knowledge Based: 5.4957</div>
+                        <div>Physical Search Walking Skill: </div>
+                        <div>Physical Search Obstacle Skill: </div>
+                        <div>Cognitive Search Pathing Decision: </div>
+                        <div>Cognitive Search Knowledge Based: </div>
                         <div></div>
-                        <div><strong>ROLE: DEBRIS CLEARING </strong> </div>
+                        <div><strong>ROLE: ENGINEER </strong> </div>
                     </div>
                 </div>
             </div>

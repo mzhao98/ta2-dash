@@ -26,7 +26,7 @@ const draw = (props) => {
 
     //Read the data
     //d3.csv("https://raw.githubusercontent.com/mzhao98/data_store/main/cer_test2.csv", function(data) {
-    d3.csv("cer_test.csv", function(data) {
+    d3.csv("cer_test2.csv", function(data) {
       // Add X axis
       var x = d3.scaleLinear()
         .domain([0, 145])
@@ -60,7 +60,6 @@ const draw = (props) => {
       svg.selectAll("circle")
         .transition()
         .delay(function(d,i){return(i*10)})
-        .duration(1000)
         .attr("opacity", "1")
 
 

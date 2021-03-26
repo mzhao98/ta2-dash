@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import draw from './vis';
 
-export default class PieChart extends Component {
+export default class LineChart extends Component {
 
     componentDidMount() {
         draw(this.props);
@@ -13,8 +13,7 @@ export default class PieChart extends Component {
 
     render() {
         return (
-            <div className='vis-piechart'/>
+            <div className='ind_redundancy'/>
         )
     }
 }
-

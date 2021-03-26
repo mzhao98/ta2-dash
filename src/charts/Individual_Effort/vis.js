@@ -34,7 +34,7 @@ const draw = (props) => {
 
 
     // append the svg object to the body of the page
-    var svg = d3.select(".vis-linechart_cer3")
+    var svg = d3.select(".ind_effort")
       .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -113,20 +113,30 @@ const draw = (props) => {
 
 
       // Add dots
-      svg.append('g')
+//      svg.append('g')
+//        .selectAll("dot")
+//        .data(data)
+//        .enter()
+//        .append("circle")
+//          .attr("cx", function (d) { return x(d.ID); } )
+//          .attr("cy", function (d) { return y(d.coverage); } )
+//          .attr("r", 2.5)
+//          .attr("opacity", "0")
+//          .style("fill", function (d) { return (d.color); })
+//          .call(transition);
+//
+//        svg.selectAll("path")
+//          .attr("opacity", "1")
+    svg.append('g')
         .selectAll("dot")
         .data(data)
         .enter()
         .append("circle")
           .attr("cx", function (d) { return x(d.ID); } )
-          .attr("cy", function (d) { return y(d.team_effort); } )
-          .attr("r", 2.5)
-          .style("fill", "#332ECC")
+          .attr("cy", function (d) { return y(d.effort); } )
+          .attr("r", 3.5)
+          .style("fill", function (d) { return (d.color); })
           .attr("opacity", "0")
-          .call(transition);
-
-        svg.selectAll("path")
-          .attr("opacity", "1")
 
 
 
